@@ -12,7 +12,7 @@ import styles from "./productpage.css";
 
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
-import { ProductLeftPage } from "./leftproductpage";
+// import { ProductLeftPage } from "./leftproductpage";
 // import { Switch } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
 import {Sortingdiv} from "../product/Sortingdiv";
@@ -24,6 +24,7 @@ import { AppContext } from "../LoginSignup/context/provider";
  import { IoIosPin } from "react-icons/io";
 import { TopHidden } from "../TopHiddenNav/TopHidden";
 import { FilterPart } from "../FIlter/Filter";
+import { LeftBox } from "./LeftBox";
 
 export const ProductPage = () => {
     const [clicked, setClicked] = useState(false);
@@ -72,7 +73,7 @@ export const ProductPage = () => {
       <div className="product_main_container">
 
         <div className="product_left_div">
-          {/* <ProductLeftPage/> */}
+          <LeftBox/>
         </div>
         <div className="product_right_div">
          <div className="right_top">

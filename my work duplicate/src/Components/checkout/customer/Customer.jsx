@@ -135,11 +135,11 @@ export const Customer = () => {
                 {/* ------------------------------------------------ */}
 
                 <h3 className="h3_margin_top header3">Let us know what you need</h3>
-                <p>Requests are fulfilled on a first come, first served basis. We'll send yours right after you book.</p>
+                <p className="paragraph">Requests are fulfilled on a first come, first served basis. We'll send yours right after you book.</p>
                 
                 <div id="preference_and_configuration">
                     <div>
-                        <p>Do you have a smoking preference?</p>
+                        <p className="paragraph">Do you have a smoking preference?</p>
                         <div id="preference">
                             <div className="radio_container">
                                 <input type="radio" className="radio" name="smoking_preference" id="non-smoking" onChange={(e)=>{
@@ -164,7 +164,7 @@ export const Customer = () => {
                     </div>
 
                     <div>
-                        <p>What bed configuration do you prefer?</p>
+                        <p className="paragraph">What bed configuration do you prefer?</p>
                         <div id="configuration">
                             <div className="radio_container">
                                 <input type="radio" className="radio" name="bed_configuration" id="large__bed" onChange={(e)=>{
@@ -208,7 +208,7 @@ export const Customer = () => {
 
                 {(request === "+") ? "" : 
                 <div id="more_requests_container">
-                    <p>We'll make sure your property or host gets your request quickly.</p>
+                    <p className="paragraph">We'll make sure your property or host gets your request quickly.</p>
 
                     <div id="requests">
 
@@ -263,7 +263,7 @@ export const Customer = () => {
 
             </form>
             <div className="button_container container_checkout">
-                <p>
+                <p className="paragraph">
                     By proceeding with this booking, I agree to Agoda’s <a href="#" className="anchor">Terms of Use</a> and <a href="#" className="anchor">Privacy Policy</a>.
                 </p>
                 <button className="button_checkout" onClick={()=>{

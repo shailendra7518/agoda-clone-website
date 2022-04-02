@@ -43,8 +43,6 @@ const handdlesearch=()=>{
     console.log(error);
   })
 
-
-
   localStorage.setItem("Searchdata",JSON.stringify(Searchdata))
 
 }

@@ -17,9 +17,9 @@ export const Checkout = () => {
                 { (information_in_store === "customer_information") ? < Customer /> : < Payment /> }
             </div>
 
-            <div className="checkout__container-right container_checkout">
+            {/* <div className="checkout__container-right container_checkout">
                 right part
-            </div>
+            </div> */}
 
         </div>
     );
