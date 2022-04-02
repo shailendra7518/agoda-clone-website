@@ -10,7 +10,8 @@ export function TopHidden(){
   const [Searchdata,setSearchdata]=useState({
     destination:"",
     start_date:"",
-    end_date:""
+    end_date:"",
+    adult:""
   })
   
   const handlechange=(e)=>{

@@ -4,9 +4,10 @@ import { TopHidden } from "../TopHiddenNav/TopHidden";
 import "../Discription/secoundcomponents.css"
 import "./Firstcomponents.css"
 import { MdFamilyRestroom } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 export const Firstcomponent = () => {
   const [data, setData] = useState([]);
-
+const navigate=useNavigate()
   const getFormData = () => {
     axios.get("http://localhost:3002/hotel").then(res => {
       setData(res.data);
@@ -18,24 +19,26 @@ export const Firstcomponent = () => {
   }, []);
   
 
-  console.log(data);
- let hotel= [
-    {
-      "image":[
-          {"image1":"https://bit.ly/3wUkgds"},
-          {"image2":"https://bit.ly/3NMoR7N"},
-          {"image3":"https://bit.ly/3JW6fQe"},
-          {"image4":"https://bit.ly/3ISYbyn"}
-      ],
-      "name": "Devesh Verma",       
-      "age": "21",
-      "address": "pathan ka bagg, Dhamera Adda bulandshahr",
-      "salary": "45000",
-      "department": "IT",
-      "id": 1
-    }
+//   console.log(data);
+//  let hotel= [
+//     {
+//       "image":[
+//           {"image1":"https://bit.ly/3wUkgds"},
+//           {"image2":"https://bit.ly/3NMoR7N"},
+//           {"image3":"https://bit.ly/3JW6fQe"},
+//           {"image4":"https://bit.ly/3ISYbyn"}
+//       ],
+//       "name": "Devesh Verma",       
+//       "age": "21",
+//       "address": "pathan ka bagg, Dhamera Adda bulandshahr",
+//       "salary": "45000",
+//       "department": "IT",
+//       "id": 1
+//     }
      
-  ]
+//   ]
+const [Numberofroom,setNumberofroom]=useState("1")
+
 let roomtype=["Luxury King Room","Luxury Premium Room","Deluxe Suite - Free One-Way Airport Transfer","Residence","Single Luxury"]
 let {room,price,hotel_name,hotel_address}=JSON.parse(localStorage.getItem("SingleHotel"))
 
@@ -46,9 +49,7 @@ let {room,price,hotel_name,hotel_address}=JSON.parse(localStorage.getItem("Singl
     <>
      <TopHidden/>
 
-      {hotel.map(e => {
-        
-        return (
+    
           <div className="myfirstdiv">
             <div className="myfirstdiva">
             
@@ -78,8 +79,8 @@ let {room,price,hotel_name,hotel_address}=JSON.parse(localStorage.getItem("Singl
             </div>
             <div className="wifi"><img src="https://i.ibb.co/SV3mdZW/action-plate.jpg" alt="" /></div>
           </div>
-        );
-      })}
+       
+     
 
 
        <div className="contaienr">
@@ -126,17 +127,34 @@ let {room,price,hotel_name,hotel_address}=JSON.parse(localStorage.getItem("Singl
                      <h1 style={{color:"tomato"}}>Rs.&nbsp;{Math.floor(Math.random() * ((price+500) - (price-500) + 1)) + (price-500)}</h1>
                 </div>
                 <div >
-                  <select name="" id=""  style={{height:"50px",alignItems:"center",width:"50px",fontSize:"1.5vw",marginLeft:"60px"}}>
-                    <option value="">1</option>
-                    <option value="">1</option>
-                    <option value="">1</option>
-                    <option value="">1</option>
+                  <select name="" id=""  style={{height:"50px",alignItems:"center",width:"50px",fontSize:"1.5vw",marginLeft:"60px"}} onChange={(e)=>{
+
+                    setNumberofroom(e.target.value)
+                  }} >
+                    <option value="1">1</option>
+                    <option value="2">1</option>
+                    <option value="3">1</option>
+                    <option value="4">1</option>
                   </select>
                 </div>
                 <div>
                     <h4>most per booked</h4>
                     <hr />
-                    <button>Reserve</button>
+                    <button onClick={()=>{
+                    let paylod={
+                      Roomimage:ele,
+                      Roomtype:roomtype[index],
+                      Price:3000+Math.floor(Math.random() * ((price+500) - (price-500) + 1)) + (price-500),
+                      Numberofroom:Numberofroom,
+                      HotelAddress:hotel_address,
+                      HotelName:hotel_name,
+                      Search:JSON.parse(localStorage.getItem("Searchdata"))
+
+                    }
+                    localStorage.setItem("ReservedRoom",JSON.stringify(paylod))
+                       navigate("/checkout")
+
+                    }}>Reserve</button>
                 </div>
             </div>
             <div className="mainmapdiv4">
@@ -164,7 +182,21 @@ let {room,price,hotel_name,hotel_address}=JSON.parse(localStorage.getItem("Singl
                 </div>
                 <div>
                   
-                    <button>Reserve</button>
+                    <button onClick={()=>{
+  let paylod={
+    Roomimage:ele,
+    Roomtype:roomtype[index],
+    Price:3000+Math.floor(Math.random() * ((price+500) - (price-500) + 1)) + (price-500),
+    Numberofroom:Numberofroom,
+    HotelAddress:hotel_address,
+    HotelName:hotel_name,
+    Search:JSON.parse(localStorage.getItem("Searchdata"))
+
+  }
+  localStorage.setItem("ReservedRoom",JSON.stringify(paylod))
+     
+  navigate("/checkout")
+                    }} >Reserve</button>
                 </div>
             </div>
             
