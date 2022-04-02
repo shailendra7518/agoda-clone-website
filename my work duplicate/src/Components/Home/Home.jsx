@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import{TopHidden} from  "../TopHiddenNav/TopHidden"
-
+import axios from "axios";
 export function Home() {
 const navigate=useNavigate()
 const [Searchdata,setSearchdata]=useState({
@@ -27,8 +27,25 @@ const handlechange=(e)=>{
   setSearchdata({...Searchdata,[id]:value})
 }
 const handdlesearch=()=>{
+
+  axios.get(`https://blooming-brook-61650.herokuapp.com/findhotels/${Searchdata.destination}`)
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    let hotels=response.data
+    localStorage.setItem("Allhotels",JSON.stringify(hotels))
+    // setloading(false)
+    navigate("/productpage")
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+
+
+
   localStorage.setItem("Searchdata",JSON.stringify(Searchdata))
-navigate("/productpage")
+
 }
 console.log(Searchdata)
 

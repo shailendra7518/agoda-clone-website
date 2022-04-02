@@ -42,24 +42,24 @@ export const ProductPage = () => {
     let searchData=JSON.parse(localStorage.getItem("Searchdata"))
     console.log(searchData.destination)
 
- useEffect(()=>{
-   setloading(true)
-     axios.get(`https://blooming-brook-61650.herokuapp.com/findhotels/${searchData.destination}`)
-  .then(function (response) {
-    // handle success
-    console.log(response);
-    let hotels=response.data
-    localStorage.setItem("Allhotels",JSON.stringify(hotels))
-    setloading(false)
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
+//  useEffect(()=>{
+//    setloading(true)
+//      axios.get(`https://blooming-brook-61650.herokuapp.com/findhotels/${searchData.destination}`)
+//   .then(function (response) {
+//     // handle success
+//     console.log(response);
+//     let hotels=response.data
+//     localStorage.setItem("Allhotels",JSON.stringify(hotels))
+//     setloading(false)
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
   
- },[])
+//  },[])
 
-let arr=["Excellent","Exeptional","Very good"]
+  let arr=["Excellent","Exeptional","Very good"]
  let allhotes=JSON.parse(localStorage.getItem("Allhotels"))
 
 
