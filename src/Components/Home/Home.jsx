@@ -104,7 +104,7 @@ console.log(Searchdata)
              </div>
            <div className="search_box">
            <BsSearch fontSize={"2vw"}/>
-           <input type="text" className="serach_input" id="destination" onChange={handlechange} placeholder="Search place like Mumbai, etc" />
+           <input placeholder="Search place like Mumbai, etc" type="text" className="serach_input" id="destination" onChange={handlechange}  />
            </div>
          
          <div className="date_and_gest">
