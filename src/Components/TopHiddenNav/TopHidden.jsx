@@ -54,7 +54,7 @@ const [loading,setloading]=useState(false)
      return loading ? <Loading/>: <div className="main_top_div">
          <div className="div_for_search">
              <BsSearch fontSize={"2vw"}/>
-           <input type="text" className="top_serach_input" id="destination" onChange={handlechange}  required />
+           <input type="text" className="top_serach_input" id="destination" onChange={handlechange}  required placeholder="Search place like Mumbai, etc" />
          </div>
          <div className="div_for_input">
          <input type="date" id="start_date" className="top_date_input" onChange={handlechange} required />
