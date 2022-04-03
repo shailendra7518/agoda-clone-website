@@ -79,6 +79,7 @@ export const Login = () => {
         setLoading(true);
         let timer = setTimeout(() => {
             setLoading(false);
+           
         },2000);
 
         // clean-up
@@ -93,7 +94,7 @@ export const Login = () => {
         console.log(response.profileObj)
         // Auth.user = res;
         localStorage.setItem("userDetails", JSON.stringify(response.profileObj));
-     alert("user logged in succesfully")
+          
         // Auth.toggle(!Auth.isAuth);
         navigate("/")
 
