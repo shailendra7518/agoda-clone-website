@@ -70,14 +70,12 @@ export const Register = () => {
         console.log("Captcha value: ", value);
     }
 
-    function responseGoogle(response) {
-        console.log("successfully registred")
-        console.log(response)
-        console.log(response.profileObj)
-        // Auth.user = res;
-        localStorage.setItem("userDetails", JSON.stringify(response.profileObj));
-        // Auth.toggle(!Auth.isAuth);
-    }
+    // function responseGoogle(response) {
+        // console.log("successfully registred")
+        // console.log(response)
+        // console.log(response.profileObj)
+        // localStorage.setItem("userDetails", JSON.stringify(response.profileObj));
+    //     }
 
     // if(Auth.isAuth) {
     //     return <Link to="/" />

@@ -88,18 +88,18 @@ export const Login = () => {
         })
     },[])
 
-    function responseGoogle(response){
-        console.log("Success")
-        console.log(response)
-        console.log(response.profileObj)
-        // Auth.user = res;
-        localStorage.setItem("userDetails", JSON.stringify(response.profileObj));
+    // function responseGoogle(response){
+    //     console.log("Success")
+    //     console.log(response)
+    //     console.log(response.profileObj)
+    //     // Auth.user = res;
+    //     localStorage.setItem("userDetails", JSON.stringify(response.profileObj));
       
-        // Auth.toggle(!Auth.isAuth);
+    //     // Auth.toggle(!Auth.isAuth);
        
        
 
-    }
+    // }
     
         // if(Auth.isAuth) {
         //     return <Redirect to="/" />
