@@ -36,7 +36,7 @@ const handdlesearch=()=>{
     return
   }
    setloading(true)
-  axios.get(`https://blooming-brook-61650.herokuapp.com/findhotels/${Searchdata.destination}`)
+  axios.get(`https://mycorsproxy-forauth.herokuapp.com/https://blooming-brook-61650.herokuapp.com/findhotels/${Searchdata.destination}`)
   .then(function (response) {
     // handle success
     console.log(response);
