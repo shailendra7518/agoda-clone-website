@@ -40,9 +40,13 @@ export const Navbar = () => {
     const classes = useStyles();
 
    // const auth = useContext(IsAuth);
+   let userdet=null
 
     // let userData = JSON.parse(localStorage.getItem("userDetails")) || {};
-    let userdet=JSON.parse(localStorage.getItem("userDetails")) ||JSON.parse(localStorage.getItem("user"))
+    if(JSON.parse(localStorage.getItem("userDetails")) ||JSON.parse(localStorage.getItem("user"))){
+      userdet=JSON.parse(localStorage.getItem("userDetails")) ||JSON.parse(localStorage.getItem("user"))
+    }
+
     console.log(userdet)
     return(
         <>
