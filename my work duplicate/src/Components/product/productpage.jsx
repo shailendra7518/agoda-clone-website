@@ -41,7 +41,7 @@ export const ProductPage = () => {
   }
 
     let searchData=JSON.parse(localStorage.getItem("Searchdata"))
-    console.log(searchData.destination)
+ 
 
 //  useEffect(()=>{
 //    setloading(true)
@@ -89,7 +89,7 @@ export const ProductPage = () => {
 
                 return <>
                 
-               <div className="each_card">
+               <div className="each_card" key={index}>
             
                     <div className="small_card">
                       <img src={hotel.main_image} alt="" />

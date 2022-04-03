@@ -29,6 +29,7 @@ const handlechange=(e)=>{
   const{id,value}=e.target
   setSearchdata({...Searchdata,[id]:value})
 }
+console.log(Searchdata.destination)
 const handdlesearch=()=>{
   if(Searchdata.start_date=="" || Searchdata.end_date=="" ||Searchdata.destination=="" ){
      
@@ -36,7 +37,13 @@ const handdlesearch=()=>{
     return
   }
    setloading(true)
-  axios.get(`https://mycorsproxy-forauth.herokuapp.com/https://blooming-brook-61650.herokuapp.com/findhotels/${Searchdata.destination}`)
+  //  let dest=Searchdata.destination
+  //  dest=dest.toLowerCase()
+  let result=Searchdata.destination.toLowerCase()
+       
+    console.log(result)
+ 
+  axios.get(`https://mycorsproxy-forauth.herokuapp.com/https://blooming-brook-61650.herokuapp.com/findhotels/${result}`)
   .then(function (response) {
     // handle success
     console.log(response);
