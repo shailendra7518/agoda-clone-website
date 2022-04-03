@@ -67,18 +67,6 @@ export const Login = () => {
       };
       
 
-
-
-
-
-
-
-
-
-
-
-
-
     const googlee = useRef();
 
     const handleLogin = () => {
@@ -86,13 +74,6 @@ export const Login = () => {
         login({email,password}, dispatch);
       
     }
-
-
-
-
-
-
-
 
     useEffect(() => {
         setLoading(true);
@@ -112,7 +93,9 @@ export const Login = () => {
         console.log(response.profileObj)
         // Auth.user = res;
         localStorage.setItem("userDetails", JSON.stringify(response.profileObj));
+     alert("user logged in succesfully")
         // Auth.toggle(!Auth.isAuth);
+        navigate("/")
 
     }
     

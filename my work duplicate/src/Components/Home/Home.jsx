@@ -14,13 +14,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import{TopHidden} from  "../TopHiddenNav/TopHidden"
 import axios from "axios";
+import { Loading } from "../LoginSignup/login/loading";
 export function Home() {
+  const [loading,setloading]=useState(false)
 const navigate=useNavigate()
 const [Searchdata,setSearchdata]=useState({
   destination:"",
   start_date:"",
   end_date:"",
-  adult:""
+  adult:"1"
 })
 
 const handlechange=(e)=>{
@@ -28,13 +30,19 @@ const handlechange=(e)=>{
   setSearchdata({...Searchdata,[id]:value})
 }
 const handdlesearch=()=>{
-
+  if(Searchdata.start_date=="" || Searchdata.end_date=="" ||Searchdata.destination=="" ){
+     
+    alert("please fill all area")
+    return
+  }
+   setloading(true)
   axios.get(`https://blooming-brook-61650.herokuapp.com/findhotels/${Searchdata.destination}`)
   .then(function (response) {
     // handle success
     console.log(response);
     let hotels=response.data
     localStorage.setItem("Allhotels",JSON.stringify(hotels))
+    setloading(false)
     // setloading(false)
     navigate("/productpage")
   })
@@ -48,7 +56,7 @@ const handdlesearch=()=>{
 }
 console.log(Searchdata)
 
-  return (<>
+  return loading ? (<Loading/>): (<>
   <TopHidden/>
     <div className="container">
       <div className="banner_and_blurbox">
