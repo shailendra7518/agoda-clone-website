@@ -13,11 +13,11 @@ export const Checkout = () => {
 let {HotelAddress,HotelName,Numberofroom,Price,Roomimage,Roomtype,Search}=JSON.parse(localStorage.getItem("ReservedRoom"))
     let information_in_store = useSelector((state) => (state.information.information));
    
-      let auth=JSON.parse(localStorage.getItem("user")) || JSON.parse(localStorage.getItem("userDetails"))
-      if(!auth){
-        alert("please login first")
-           navigate("/login")
-      }
+    //   let auth=JSON.parse(localStorage.getItem("user")) || JSON.parse(localStorage.getItem("userDetails"))
+    //   if(!auth){
+    //     alert("please login first")
+    //        navigate("/login")
+    //   }
 
     return (
         <div className="checkout__container">
