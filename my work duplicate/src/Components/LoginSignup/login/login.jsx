@@ -96,7 +96,10 @@ export const Login = () => {
         localStorage.setItem("userDetails", JSON.stringify(response.profileObj));
           
         // Auth.toggle(!Auth.isAuth);
-        navigate("/")
+        setTimeout(()=>{
+            navigate("/")
+        },2000)
+       
 
     }
     
