@@ -46,6 +46,7 @@ export const Payment = () => {
     function saveBookingDetails(){
         let bookingDetails = {...customerInformation, ...paymentInformation};
         localStorage.setItem("bookingDetails", JSON.stringify(bookingDetails));
+        localStorage.removeItem("information")
         Navigate("/");
     }
 
