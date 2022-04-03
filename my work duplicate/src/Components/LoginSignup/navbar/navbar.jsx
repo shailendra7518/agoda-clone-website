@@ -40,14 +40,10 @@ export const Navbar = () => {
     const classes = useStyles();
 
    // const auth = useContext(IsAuth);
-   let userdet=null
 
     // let userData = JSON.parse(localStorage.getItem("userDetails")) || {};
-    // if(JSON.parse(localStorage.getItem("userDetails")) ||JSON.parse(localStorage.getItem("user"))){
-    //   userdet=JSON.parse(localStorage.getItem("userDetails")) ||JSON.parse(localStorage.getItem("user"))
-    // }
-
-    // console.log(userdet)
+    let userdet=JSON.parse(localStorage.getItem("userDetails")) ||JSON.parse(localStorage.getItem("user"))
+    console.log(userdet)
     return(
         <>
        
@@ -102,7 +98,7 @@ export const Navbar = () => {
 
                         <>
                             <Link to="/login" style={{textDecoration: "none"}}>
-                                <Button className={classes.primary} color="primary" >Sign in</Button>
+                                <Button className={classes.primary} color="primary" >{userdet ? userdet.firstname ? userdet.firstname: <img style={{height:"40px",borderRadius:"50%"}} src={userdet.imageUrl}/>   :"Sign in"}</Button>
                             </Link>
 
                             <Link to="/register" style={{textDecoration: "none"}}>
