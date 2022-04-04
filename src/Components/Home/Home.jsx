@@ -43,7 +43,7 @@ const handdlesearch=()=>{
        
     console.log(result)
  
-  axios.get(`https://mycorsproxy-forauth.herokuapp.com/https://blooming-brook-61650.herokuapp.com/findhotels/${result}`)
+  axios.get(`https://desolate-cove-61722.herokuapp.com/findhotels/${result}`)
   .then(function (response) {
     // handle success
     console.log(response);
